@@ -1,70 +1,207 @@
+/* Global Reset & Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+  scroll-behavior: smooth;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: #0a0a0a;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #00ff99;
+  z-index: 100;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00ff99;
+}
+.nav-links {
+  display: flex;
+}
+.nav-links li {
+  margin-left: 2rem;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #00ff99;
 }
 
-header h1 {
-    margin: 0;
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8rem 5% 4rem;
+  min-height: 100vh;
+}
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+}
+.hero-text h1 {
+  font-size: 3rem;
+}
+.hero-text h1 span {
+  color: #00ff99;
+}
+.hero-text p {
+  margin: 1rem 0;
+  color: #ccc;
+}
+.btn {
+  padding: 0.8rem 1.5rem;
+  background: #00ff99;
+  color: #0a0a0a;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.btn:hover {
+  background: #00cc7a;
+  box-shadow: 0 0 15px #00ff99;
+}
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.hero-image img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #00ff99;
+  box-shadow: 0 0 20px #00ff99, 0 0 40px #00ff99, 0 0 60px #00ff99;
+  animation: glowPulse 2s infinite alternate;
+}
+@keyframes glowPulse {
+  from {
+    box-shadow: 0 0 20px #00ff99, 0 0 40px #00ff99, 0 0 60px #00ff99;
+  }
+  to {
+    box-shadow: 0 0 30px #00ff99, 0 0 60px #00ff99, 0 0 80px #00ff99;
+  }
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
+/* Section Styling */
+.section {
+  padding: 4rem 5%;
+}
+.section h2 {
+  color: #00ff99;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  position: relative;
+}
+.section h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #00ff99;
+  margin: 0.5rem auto 0;
 }
 
-section {
-    padding: 30px 0;
-    background: white;
-    margin-bottom: 10px;
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.skill-card {
+  background: #111;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #00ff99;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #00ff99;
 }
 
-h2 {
-    color: #333;
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
-
 .project-card {
-    background: #f8f8f8;
-    padding: 15px;
-    margin-top: 10px;
-    border-left: 4px solid #333;
+  background: #111;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #00ff99;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #00ff99;
+}
+.project-card h3 a {
+  color: #00ff99;
+  text-decoration: none;
+}
+.project-card h3 a:hover {
+  text-decoration: underline;
 }
 
-.project-card a {
-    text-decoration: none;
-    color: #007bff;
+/* Education */
+#education ul {
+  color: #ccc;
+  list-style: none;
+  padding-left: 0;
+}
+#education li {
+  margin-bottom: 0.5rem;
 }
 
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
+/* Contact Section */
+#contact p a {
+  color: #00ff99;
+  text-decoration: none;
+}
+#contact p a:hover {
+  text-decoration: underline;
 }
 
-form button {
-    padding: 10px;
-    background: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-form button:hover {
-    background: #555;
-}
-
+/* Footer */
 footer {
-    background: #333;
-    color: white;
+  background: #0a0a0a;
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #00ff99;
+  color: #ccc;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
     text-align: center;
-    padding: 10px;
+  }
+  .hero-image {
+    margin-top: 2rem;
+  }
 }
